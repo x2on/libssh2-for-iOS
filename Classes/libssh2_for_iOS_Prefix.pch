@@ -1,0 +1,8 @@
+//
+// Prefix header for all source files of the 'libssh2-for-iOS' target in the 'libssh2-for-iOS' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+    #import <UIKit/UIKit.h>
+#endif

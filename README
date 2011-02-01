@@ -1,0 +1,7 @@
+You can build the libssh2 library with openssl or with libgcrypt!
+
+libssh2 with openssl:
+./build-all.sh openssl
+
+libssh2 with libgcrypt:
+./build-all.sh libgcrypt

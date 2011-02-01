@@ -19,6 +19,8 @@
 
 #import "libssh2_for_iOSAppDelegate.h"
 
+#import "libssh2/libssh2.h"
+
 @implementation libssh2_for_iOSAppDelegate
 
 @synthesize window;

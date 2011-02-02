@@ -21,9 +21,22 @@
 
 @interface libssh2_for_iOSAppDelegate : NSObject <UIApplicationDelegate> {
     UIWindow *window;
+	
+	IBOutlet UITextField *textField;
+	IBOutlet UITextField *ipField;
+	IBOutlet UITextField *userField;
+	IBOutlet UITextField *passwordField;
+	IBOutlet UITextView *textView;
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;
+@property (nonatomic, retain) IBOutlet UITextField *textField;
+@property (nonatomic, retain) IBOutlet UITextField *ipField;
+@property (nonatomic, retain) IBOutlet UITextField *userField;
+@property (nonatomic, retain) IBOutlet UITextField *passwordField;
+@property (nonatomic, retain) IBOutlet UITextView *textView;
 
+- (IBAction)showInfo;
+- (IBAction)executeCommand:(id)sender;
 @end
 

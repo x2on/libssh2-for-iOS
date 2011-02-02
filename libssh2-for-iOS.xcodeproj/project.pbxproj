@@ -13,6 +13,7 @@
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		2A3B48BC12F897D600F428E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3B48BB12F897D600F428E7 /* main.m */; };
 		2A3B48BE12F897E000F428E7 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A3B48BD12F897E000F428E7 /* MainWindow.xib */; };
+		2A5385E512F8A890007E067A /* SSHWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A5385E412F8A890007E067A /* SSHWrapper.m */; };
 		2AB446D812F8A424006B0090 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AB446D712F8A424006B0090 /* Icon.png */; };
 		2AB446EA12F8A588006B0090 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB446E512F8A588006B0090 /* libcrypto.a */; };
 		2AB446EB12F8A588006B0090 /* libgcrypt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB446E612F8A588006B0090 /* libgcrypt.a */; };
@@ -31,6 +32,8 @@
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2A3B48BB12F897D600F428E7 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Classes/main.m; sourceTree = "<group>"; };
 		2A3B48BD12F897E000F428E7 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = Ressources/MainWindow.xib; sourceTree = "<group>"; };
+		2A5385E312F8A890007E067A /* SSHWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSHWrapper.h; sourceTree = "<group>"; };
+		2A5385E412F8A890007E067A /* SSHWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSHWrapper.m; sourceTree = "<group>"; };
 		2AB446D712F8A424006B0090 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Ressources/Icon.png; sourceTree = "<group>"; };
 		2AB446E512F8A588006B0090 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = lib/libcrypto.a; sourceTree = "<group>"; };
 		2AB446E612F8A588006B0090 /* libgcrypt.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgcrypt.a; path = lib/libgcrypt.a; sourceTree = "<group>"; };
@@ -67,6 +70,8 @@
 			children = (
 				1D3623240D0F684500981E51 /* libssh2_for_iOSAppDelegate.h */,
 				1D3623250D0F684500981E51 /* libssh2_for_iOSAppDelegate.m */,
+				2A5385E312F8A890007E067A /* SSHWrapper.h */,
+				2A5385E412F8A890007E067A /* SSHWrapper.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -189,6 +194,7 @@
 			files = (
 				1D3623260D0F684500981E51 /* libssh2_for_iOSAppDelegate.m in Sources */,
 				2A3B48BC12F897D600F428E7 /* main.m in Sources */,
+				2A5385E512F8A890007E067A /* SSHWrapper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -19,23 +19,43 @@
 
 #import "libssh2_for_iOSAppDelegate.h"
 
-#import "libssh2/libssh2.h"
+#import "SSHWrapper.h"
 
 @implementation libssh2_for_iOSAppDelegate
 
 @synthesize window;
-
+@synthesize textField, textView, ipField, userField, passwordField;
 
 #pragma mark -
 #pragma mark Application lifecycle
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {    
     
-    // Override point for customization after application launch.
-    
     [self.window makeKeyAndVisible];
     
     return YES;
+}
+
+- (IBAction)executeCommand:(id)sender {
+	SSHWrapper *sshWrapper = [[SSHWrapper alloc] init];
+	[sshWrapper connectToHost:ipField.text port:22 user:userField.text password:passwordField.text];
+
+	textView.text = [sshWrapper executeCommand:textField.text];
+    [sshWrapper closeConnection];
+	[sshWrapper release];
+	
+	[textField resignFirstResponder];
+	[ipField resignFirstResponder];
+	[userField resignFirstResponder];
+	[passwordField resignFirstResponder];
+
+}
+
+
+- (IBAction)showInfo {
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"libssh2-for-iOS" message:@"libssh2-Version: 1.2.7\nlibgcrypt-Version: 1.4.6\nlibgpg-error-Version: 1.10\nopenssl-Version: 1.0.0c\n\nLicense: See include/*/LICENSE\n\nCopyright 2011 by Felix Schulze\n http://www.x2on.de" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
+	[alert show];
+	[alert release];
 }
 
 

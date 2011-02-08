@@ -11,3 +11,5 @@ libssh2 with openssl:
 
 libssh2 with libgcrypt:
 ./build-all.sh libgcrypt
+
+UPDATE 2011-02-08: I habe updated OpemSSL to 1.0.0d

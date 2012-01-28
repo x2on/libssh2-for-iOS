@@ -40,19 +40,19 @@
 #ifndef LIBSSH2_H
 #define LIBSSH2_H 1
 
-#define LIBSSH2_COPYRIGHT "2004-2010 The libssh2 project and its contributors."
+#define LIBSSH2_COPYRIGHT "2004-2011 The libssh2 project and its contributors."
 
 /* We use underscore instead of dash when appending DEV in dev versions just
    to make the BANNER define (used by src/session.c) be a valid SSH
    banner. Release versions have no appended strings and may of course not
    have dashes either. */
-#define LIBSSH2_VERSION "1.2.8"
+#define LIBSSH2_VERSION "1.3.0"
 
 /* The numeric version number is also available "in parts" by using these
    defines: */
 #define LIBSSH2_VERSION_MAJOR 1
-#define LIBSSH2_VERSION_MINOR 2
-#define LIBSSH2_VERSION_PATCH 8
+#define LIBSSH2_VERSION_MINOR 3
+#define LIBSSH2_VERSION_PATCH 0
 
 /* This is the numeric version of the libssh2 version number, meant for easier
    parsing and comparions by programs. The LIBSSH2_VERSION_NUM define will
@@ -69,7 +69,7 @@
    and it is always a greater number in a more recent release. It makes
    comparisons with greater than and less than work.
 */
-#define LIBSSH2_VERSION_NUM 0x010208
+#define LIBSSH2_VERSION_NUM 0x010300
 
 /*
  * This is the date and time when the full source package was created. The
@@ -80,14 +80,14 @@
  *
  * "Mon Feb 12 11:35:33 UTC 2007"
  */
-#define LIBSSH2_TIMESTAMP "Tue Apr  5 17:15:42 UTC 2011"
+#define LIBSSH2_TIMESTAMP "Tue Sep  6 20:56:30 UTC 2011"
 
 #ifndef LIBSSH2_VERSION_ONLY
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-#ifdef _MSC_VER
+#ifdef _WIN32
 # include <BaseTsd.h>
 # include <WinSock2.h>
 #endif
@@ -237,12 +237,22 @@ typedef struct _LIBSSH2_USERAUTH_KBDINT_RESPONSE
   void name(LIBSSH2_SESSION *session, void **session_abstract, \
             LIBSSH2_CHANNEL *channel, void **channel_abstract)
 
+/* I/O callbacks */
+#define LIBSSH2_RECV_FUNC(name)  ssize_t name(int socket, \
+                                              void *buffer, size_t length, \
+                                              int flags, void **abstract)
+#define LIBSSH2_SEND_FUNC(name)  ssize_t name(int socket, \
+                                              const void *buffer, size_t length,\
+                                              int flags, void **abstract)
+
 /* libssh2_session_callback_set() constants */
 #define LIBSSH2_CALLBACK_IGNORE             0
 #define LIBSSH2_CALLBACK_DEBUG              1
 #define LIBSSH2_CALLBACK_DISCONNECT         2
 #define LIBSSH2_CALLBACK_MACERROR           3
 #define LIBSSH2_CALLBACK_X11                4
+#define LIBSSH2_CALLBACK_SEND               5
+#define LIBSSH2_CALLBACK_RECV               6
 
 /* libssh2_session_method_pref() constants */
 #define LIBSSH2_METHOD_KEX          0
@@ -704,6 +714,10 @@ LIBSSH2_API int libssh2_session_get_blocking(LIBSSH2_SESSION* session);
 
 LIBSSH2_API void libssh2_channel_set_blocking(LIBSSH2_CHANNEL *channel,
                                               int blocking);
+
+LIBSSH2_API void libssh2_session_set_timeout(LIBSSH2_SESSION* session,
+                                             long timeout);
+LIBSSH2_API long libssh2_session_get_timeout(LIBSSH2_SESSION* session);
 
 /* libssh2_channel_handle_extended_data is DEPRECATED, do not use! */
 LIBSSH2_API void libssh2_channel_handle_extended_data(LIBSSH2_CHANNEL *channel,

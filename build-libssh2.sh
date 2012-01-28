@@ -58,14 +58,20 @@ do
 
 	export DEVROOT="/Developer/Platforms/${PLATFORM}.platform/Developer"
 	export SDKROOT="${DEVROOT}/SDKs/${PLATFORM}${SDKVERSION}.sdk"
-	export CC=${DEVROOT}/usr/bin/gcc
 	export LD=${DEVROOT}/usr/bin/ld
-	export CPP=${DEVROOT}/usr/bin/cpp
-	export CXX=${DEVROOT}/usr/bin/g++
+	if [ "${ARCH}" == "i386" ];
+	then
+	export CC=${DEVROOT}/usr/bin/gcc
+		export CPP=${DEVROOT}/usr/bin/cpp
+		export CXX=${DEVROOT}/usr/bin/g++
+		export CXXCPP=$DEVROOT/usr/bin/cpp
+	else
+		export CC=${DEVROOT}/usr/bin/gcc
+		export CXX=${DEVROOT}/usr/bin/g++
+	fi
 	export AR=${DEVROOT}/usr/bin/ar
 	export AS=${DEVROOT}/usr/bin/as
 	export NM=${DEVROOT}/usr/bin/nm
-	export CXXCPP=$DEVROOT/usr/bin/cpp
 	export RANLIB=$DEVROOT/usr/bin/ranlib
 	export LDFLAGS="-arch ${ARCH} -pipe -no-cpp-precomp -isysroot ${SDKROOT} -L${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk/lib"
 	export CFLAGS="-arch ${ARCH} -pipe -no-cpp-precomp -isysroot ${SDKROOT} -I${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk/include"

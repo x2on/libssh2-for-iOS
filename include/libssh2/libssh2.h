@@ -46,12 +46,12 @@
    to make the BANNER define (used by src/session.c) be a valid SSH
    banner. Release versions have no appended strings and may of course not
    have dashes either. */
-#define LIBSSH2_VERSION "1.3.0"
+#define LIBSSH2_VERSION "1.4.0"
 
 /* The numeric version number is also available "in parts" by using these
    defines: */
 #define LIBSSH2_VERSION_MAJOR 1
-#define LIBSSH2_VERSION_MINOR 3
+#define LIBSSH2_VERSION_MINOR 4
 #define LIBSSH2_VERSION_PATCH 0
 
 /* This is the numeric version of the libssh2 version number, meant for easier
@@ -69,7 +69,7 @@
    and it is always a greater number in a more recent release. It makes
    comparisons with greater than and less than work.
 */
-#define LIBSSH2_VERSION_NUM 0x010300
+#define LIBSSH2_VERSION_NUM 0x010400
 
 /*
  * This is the date and time when the full source package was created. The
@@ -80,16 +80,16 @@
  *
  * "Mon Feb 12 11:35:33 UTC 2007"
  */
-#define LIBSSH2_TIMESTAMP "Tue Sep  6 20:56:30 UTC 2011"
+#define LIBSSH2_TIMESTAMP "Tue Jan 31 22:25:28 UTC 2012"
 
-#ifndef LIBSSH2_VERSION_ONLY
+#ifndef RC_INVOKED
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 #ifdef _WIN32
-# include <BaseTsd.h>
-# include <WinSock2.h>
+# include <basetsd.h>
+# include <winsock2.h>
 #endif
 
 #include <stddef.h>
@@ -238,10 +238,10 @@ typedef struct _LIBSSH2_USERAUTH_KBDINT_RESPONSE
             LIBSSH2_CHANNEL *channel, void **channel_abstract)
 
 /* I/O callbacks */
-#define LIBSSH2_RECV_FUNC(name)  ssize_t name(int socket, \
+#define LIBSSH2_RECV_FUNC(name)  ssize_t name(libssh2_socket_t socket, \
                                               void *buffer, size_t length, \
                                               int flags, void **abstract)
-#define LIBSSH2_SEND_FUNC(name)  ssize_t name(int socket, \
+#define LIBSSH2_SEND_FUNC(name)  ssize_t name(libssh2_socket_t socket, \
                                               const void *buffer, size_t length,\
                                               int flags, void **abstract)
 
@@ -441,6 +441,20 @@ LIBSSH2_API void libssh2_exit(void);
  */
 LIBSSH2_API void libssh2_free(LIBSSH2_SESSION *session, void *ptr);
 
+/*
+ * libssh2_session_supported_algs()
+ *
+ * Fills algs with a list of supported acryptographic algorithms. Returns a
+ * non-negative number (number of supported algorithms) on success or a
+ * negative number (an eror code) on failure.
+ *
+ * NOTE: on success, algs must be deallocated (by calling libssh2_free) when
+ * not needed anymore
+ */
+LIBSSH2_API int libssh2_session_supported_algs(LIBSSH2_SESSION* session,
+                                               int method_type,
+                                               const char*** algs);
+
 /* Session API */
 LIBSSH2_API LIBSSH2_SESSION *
 libssh2_session_init_ex(LIBSSH2_ALLOC_FUNC((*my_alloc)),
@@ -487,6 +501,7 @@ LIBSSH2_API int libssh2_session_block_directions(LIBSSH2_SESSION *session);
 
 LIBSSH2_API int libssh2_session_flag(LIBSSH2_SESSION *session, int flag,
                                      int value);
+LIBSSH2_API const char *libssh2_session_banner_get(LIBSSH2_SESSION *session);
 
 /* Userauth API */
 LIBSSH2_API char *libssh2_userauth_list(LIBSSH2_SESSION *session,
@@ -568,7 +583,7 @@ LIBSSH2_API int libssh2_poll(LIBSSH2_POLLFD *fds, unsigned int nfds,
                              long timeout);
 
 /* Channel API */
-#define LIBSSH2_CHANNEL_WINDOW_DEFAULT  65536
+#define LIBSSH2_CHANNEL_WINDOW_DEFAULT  (256*1024)
 #define LIBSSH2_CHANNEL_PACKET_DEFAULT  32768
 #define LIBSSH2_CHANNEL_MINADJUST       1024
 
@@ -1026,7 +1041,7 @@ libssh2_knownhost_get(LIBSSH2_KNOWNHOSTS *hosts,
 
 struct libssh2_agent_publickey {
     unsigned int magic;              /* magic stored by the library */
-    void *node;	    /* handle to the internal representation of key */
+    void *node;     /* handle to the internal representation of key */
     unsigned char *blob;           /* public key blob */
     size_t blob_len;               /* length of the public key blob */
     char *comment;                 /* comment in printable format */
@@ -1165,6 +1180,6 @@ LIBSSH2_API int libssh2_trace_sethandler(LIBSSH2_SESSION *session,
 } /* extern "C" */
 #endif
 
-#endif /* LIBSSH2_VERSION_ONLY */
+#endif /* !RC_INVOKED */
 
 #endif /* LIBSSH2_H */

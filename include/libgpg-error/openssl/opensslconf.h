@@ -71,8 +71,8 @@
 
 #if !(defined(VMS) || defined(__VMS)) /* VMS uses logical names instead */
 #if defined(HEADER_CRYPTLIB_H) && !defined(OPENSSLDIR)
-#define ENGINESDIR "/Users/x2on/Projects/iPhone/libssh2-for-iOS/bin/iPhoneSimulator4.2-i386.sdk/lib/engines"
-#define OPENSSLDIR "/Users/x2on/Projects/iPhone/libssh2-for-iOS/bin/iPhoneSimulator4.2-i386.sdk"
+#define ENGINESDIR "/Users/felixschulze/dev/ios/libs/libssh2-for-iOS/bin/iPhoneSimulator5.0-i386.sdk/lib/engines"
+#define OPENSSLDIR "/Users/felixschulze/dev/ios/libs/libssh2-for-iOS/bin/iPhoneSimulator5.0-i386.sdk"
 #endif
 #endif
 

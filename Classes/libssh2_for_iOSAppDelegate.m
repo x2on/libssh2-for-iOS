@@ -53,7 +53,7 @@
 
 
 - (IBAction)showInfo {
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"libssh2-for-iOS" message:@"libssh2-Version: 1.3.0\nlibgcrypt-Version: 1.5.0\nlibgpg-error-Version: 1.10\nopenssl-Version: 1.0.0g\n\nLicense: See include/*/LICENSE\n\nCopyright 2011-2012 by Felix Schulze\n http://www.x2on.de" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"libssh2-for-iOS" message:@"libssh2-Version: 1.4.0\nlibgcrypt-Version: 1.5.0\nlibgpg-error-Version: 1.10\nopenssl-Version: 1.0.0g\n\nLicense: See include/*/LICENSE\n\nCopyright 2011-2012 by Felix Schulze\n http://www.x2on.de" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
 	[alert show];
 	[alert release];
 }

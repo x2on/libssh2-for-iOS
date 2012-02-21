@@ -29,8 +29,7 @@ SDKVERSION="5.0"
 # Don't change anything here
 CURRENTPATH=`pwd`
 ARCHS="i386 armv6 armv7"
-
-
+DEVELOPER=`xcode-select -print-path`
 ##########
 set -e
 if [ ! -e libgcrypt-${VERSION}.tar.gz ]; then
@@ -73,7 +72,7 @@ do
 	patch -p0 < ../../armasm.diff >> "${LOG}" 2>&1
 	echo "Patching done."
 
-	export DEVROOT="/Developer/Platforms/${PLATFORM}.platform/Developer"
+	export DEVROOT="${DEVELOPER}/Platforms/${PLATFORM}.platform/Developer"
 	export SDKROOT="${DEVROOT}/SDKs/${PLATFORM}${SDKVERSION}.sdk"
 	export CC=${DEVROOT}/usr/bin/gcc
 	export LD=${DEVROOT}/usr/bin/ld

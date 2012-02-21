@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/bin/sh
 
 #  Automatic build script for libssl and libcrypto 
 #  for iPhoneOS and iPhoneSimulator
 #
-#  Created by Felix Schulze on 01.02.11.
+#  Created by Felix Schulze on 16.12.10.
 #  Copyright 2010 Felix Schulze. All rights reserved.
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
@@ -30,8 +30,10 @@ SDKVERSION="5.0"														  #
 #																		  #
 ###########################################################################
 
+
 CURRENTPATH=`pwd`
 ARCHS="i386 armv6 armv7"
+DEVELOPER=`xcode-select -print-path`
 
 set -e
 if [ ! -e openssl-${VERSION}.tar.gz ]; then
@@ -62,13 +64,13 @@ do
 	echo "Building openssl-${VERSION} for ${PLATFORM} ${SDKVERSION} ${ARCH}"
 	echo "Please stand by..."
 
-	export CC="/Developer/Platforms/${PLATFORM}.platform/Developer/usr/bin/gcc -arch ${ARCH}"
+	export CC="${DEVELOPER}/Platforms/${PLATFORM}.platform/Developer/usr/bin/gcc -arch ${ARCH}"
 	mkdir -p "${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk"
 	LOG="${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk/build-openssl-${VERSION}.log"
 
 	./configure BSD-generic32 --openssldir="${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk" > "${LOG}" 2>&1
 	# add -isysroot to CC=
-	sed -ie "s!^CFLAG=!CFLAG=-isysroot /Developer/Platforms/${PLATFORM}.platform/Developer/SDKs/${PLATFORM}${SDKVERSION}.sdk !" "Makefile"
+	sed -ie "s!^CFLAG=!CFLAG=-isysroot ${DEVELOPER}/Platforms/${PLATFORM}.platform/Developer/SDKs/${PLATFORM}${SDKVERSION}.sdk !" "Makefile"
 
 	make >> "${LOG}" 2>&1
 	make install >> "${LOG}" 2>&1

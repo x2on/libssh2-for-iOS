@@ -29,7 +29,7 @@ SDKVERSION="5.0"
 # Don't change anything here
 CURRENTPATH=`pwd`
 ARCHS="i386 armv6 armv7"
-
+DEVELOPER=`xcode-select -print-path`
 
 ##########
 set -e
@@ -57,7 +57,7 @@ do
 	tar zxf libgpg-error-${VERSION}.tar.gz -C src
 	cd src/libgpg-error-${VERSION}
 
-	export DEVROOT="/Developer/Platforms/${PLATFORM}.platform/Developer"
+	export DEVROOT="${DEVELOPER}/Platforms/${PLATFORM}.platform/Developer"
 	export SDKROOT="${DEVROOT}/SDKs/${PLATFORM}${SDKVERSION}.sdk"
 	export LD=${DEVROOT}/usr/bin/ld
 	if [ "${ARCH}" == "i386" ];

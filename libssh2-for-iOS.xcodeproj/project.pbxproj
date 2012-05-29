@@ -21,6 +21,7 @@
 		2AB446ED12F8A588006B0090 /* libssh2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB446E812F8A588006B0090 /* libssh2.a */; };
 		2AB446EE12F8A588006B0090 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB446E912F8A588006B0090 /* libssl.a */; };
 		2AB4470112F8A5B5006B0090 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB4470012F8A5B5006B0090 /* libz.dylib */; };
+		53CF39D3157546170079DAC3 /* VersionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 53CF39D2157546170079DAC3 /* VersionHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,8 @@
 		2AB446F312F8A5A3006B0090 /* libssh2_for_iOS-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "libssh2_for_iOS-Info.plist"; sourceTree = "<group>"; };
 		2AB4470012F8A5B5006B0090 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		2AB4470612F8A5CC006B0090 /* libssh2_for_iOS_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libssh2_for_iOS_Prefix.pch; sourceTree = "<group>"; };
+		53CF39D1157546170079DAC3 /* VersionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VersionHelper.h; sourceTree = "<group>"; };
+		53CF39D2157546170079DAC3 /* VersionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VersionHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +75,8 @@
 				1D3623250D0F684500981E51 /* libssh2_for_iOSAppDelegate.m */,
 				2A5385E312F8A890007E067A /* SSHWrapper.h */,
 				2A5385E412F8A890007E067A /* SSHWrapper.m */,
+				53CF39D1157546170079DAC3 /* VersionHelper.h */,
+				53CF39D2157546170079DAC3 /* VersionHelper.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -198,6 +203,7 @@
 				1D3623260D0F684500981E51 /* libssh2_for_iOSAppDelegate.m in Sources */,
 				2A3B48BC12F897D600F428E7 /* main.m in Sources */,
 				2A5385E512F8A890007E067A /* SSHWrapper.m in Sources */,
+				53CF39D3157546170079DAC3 /* VersionHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,7 +18,8 @@
 //  limitations under the License.
 
 #import "libssh2_for_iOSAppDelegate.h"
-
+#include <openssl/opensslv.h>
+#include "libssh2.h"
 #import "SSHWrapper.h"
 
 @implementation libssh2_for_iOSAppDelegate
@@ -53,7 +54,10 @@
 
 
 - (IBAction)showInfo {
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"libssh2-for-iOS" message:@"libssh2-Version: 1.4.0\nlibgcrypt-Version: 1.5.0\nlibgpg-error-Version: 1.10\nopenssl-Version: 1.0.0g\n\nLicense: See include/*/LICENSE\n\nCopyright 2011-2012 by Felix Schulze\n http://www.x2on.de" delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
+    NSString *opensslVersion = [NSString stringWithCString:OPENSSL_VERSION_TEXT encoding:NSUTF8StringEncoding];
+    NSString *libssh2Version = [NSString stringWithCString:LIBSSH2_VERSION encoding:NSUTF8StringEncoding];
+    NSString *message = [NSString stringWithFormat:@"libssh2-Version: %@\nlibgcrypt-Version: 1.5.0\nlibgpg-error-Version: 1.10\nopenssl-Version: %@\n\nLicense: See include/*/LICENSE\n\nCopyright 2011-2012 by Felix Schulze\n http://www.x2on.de", libssh2Version, opensslVersion];
+	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"libssh2-for-iOS" message:message delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
 	[alert show];
 	[alert release];
 }

@@ -1,4 +1,4 @@
-This is a tutorial for using self-compiled builds of the libssh2-library for iOS. You can build apps with XCode and the official SDK from Apple with this. I also made a small example-app for using the libraries with XCode and the iPhone/iPhone-Simulator. You can also download the precompiled libssh2-library (1.2.7).
+This is a tutorial for using self-compiled builds of the libssh2-library for iOS. You can build apps with XCode and the official SDK from Apple with this. I also made a small example-app for using the libraries with XCode and the iPhone/iPhone-Simulator.
 
 @see: http://www.x2on.de/2011/02/02/libssh2-for-ios-iphone-and-ipad-example-app-with-ssh-connection/
 
@@ -12,4 +12,5 @@ libssh2 with openssl:
 libssh2 with libgcrypt:
 ./build-all.sh libgcrypt
 
+UPDATE 2012-05-29: OpenSSL 1.0.1c + libssh 1.4.2
 UPDATE 2011-02-08: I habe updated OpemSSL to 1.0.0d

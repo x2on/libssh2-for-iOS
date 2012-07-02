@@ -7,10 +7,13 @@ The example uses libssh2 to make an ssh connection to an ssh server. Then you ca
 You can build the libssh2 library with openssl or with libgcrypt!
 
 libssh2 with openssl:
+```bash
 ./build-all.sh openssl
-
+```
 libssh2 with libgcrypt:
+```bash
 ./build-all.sh libgcrypt
+```
 
-UPDATE 2012-05-29: OpenSSL 1.0.1c + libssh 1.4.2
-UPDATE 2011-02-08: I habe updated OpemSSL to 1.0.0d
+**UPDATE 2012-05-29**: OpenSSL 1.0.1c + libssh 1.4.2
+**UPDATE 2011-02-08**: I habe updated OpemSSL to 1.0.0d

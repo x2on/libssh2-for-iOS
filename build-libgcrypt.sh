@@ -22,13 +22,13 @@
 #  Change values here
 #
 VERSION="1.5.0"
-SDKVERSION="5.1"
+SDKVERSION="6.0"
 #
 ###########################################################################
 #
 # Don't change anything here
 CURRENTPATH=`pwd`
-ARCHS="i386 armv6 armv7"
+ARCHS="i386 armv7 armv7s"
 DEVELOPER=`xcode-select -print-path`
 ##########
 set -e
@@ -97,7 +97,7 @@ do
 done
 
 echo "Build library..."
-lipo -create ${CURRENTPATH}/bin/iPhoneSimulator${SDKVERSION}-i386.sdk/lib/libgcrypt.a ${CURRENTPATH}/bin/iPhoneOS${SDKVERSION}-armv6.sdk/lib/libgcrypt.a ${CURRENTPATH}/bin/iPhoneOS${SDKVERSION}-armv7.sdk/lib/libgcrypt.a -output ${CURRENTPATH}/lib/libgcrypt.a
+lipo -create ${CURRENTPATH}/bin/iPhoneSimulator${SDKVERSION}-i386.sdk/lib/libgcrypt.a ${CURRENTPATH}/bin/iPhoneOS${SDKVERSION}-armv7.sdk/lib/libgcrypt.a ${CURRENTPATH}/bin/iPhoneOS${SDKVERSION}-armv7s.sdk/lib/libgcrypt.a -output ${CURRENTPATH}/lib/libgcrypt.a
 mkdir -p ${CURRENTPATH}/include/libgcrypt
 cp -R ${CURRENTPATH}/bin/iPhoneSimulator${SDKVERSION}-i386.sdk/include/gcrypt* ${CURRENTPATH}/include/libgcrypt/
 echo "Building done."

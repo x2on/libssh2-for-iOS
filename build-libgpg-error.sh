@@ -22,13 +22,13 @@
 #  Change values here
 #
 VERSION="1.10"
-SDKVERSION="5.1"
+SDKVERSION="6.0"
 #
 ###########################################################################
 #
 # Don't change anything here
 CURRENTPATH=`pwd`
-ARCHS="i386 armv6 armv7"
+ARCHS="i386 armv7 armv7s"
 DEVELOPER=`xcode-select -print-path`
 
 ##########
@@ -93,7 +93,7 @@ do
 done
 
 echo "Build library..."
-lipo -create ${CURRENTPATH}/bin/iPhoneSimulator${SDKVERSION}-i386.sdk/lib/libgpg-error.a ${CURRENTPATH}/bin/iPhoneOS${SDKVERSION}-armv6.sdk/lib/libgpg-error.a ${CURRENTPATH}/bin/iPhoneOS${SDKVERSION}-armv7.sdk/lib/libgpg-error.a -output ${CURRENTPATH}/lib/libgpg-error.a
+lipo -create ${CURRENTPATH}/bin/iPhoneSimulator${SDKVERSION}-i386.sdk/lib/libgpg-error.a ${CURRENTPATH}/bin/iPhoneOS${SDKVERSION}-armv7.sdk/lib/libgpg-error.a ${CURRENTPATH}/bin/iPhoneOS${SDKVERSION}-armv7s.sdk/lib/libgpg-error.a -output ${CURRENTPATH}/lib/libgpg-error.a
 mkdir -p ${CURRENTPATH}/include/libgpg-error
 cp -R ${CURRENTPATH}/bin/iPhoneSimulator${SDKVERSION}-i386.sdk/include/ ${CURRENTPATH}/include/libgpg-error/
 echo "Building done."

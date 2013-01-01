@@ -21,7 +21,7 @@
 ###########################################################################
 #  Change values here
 #
-VERSION="1.4.2"
+VERSION="1.4.3"
 SDKVERSION="6.0"
 #
 ###########################################################################
@@ -41,7 +41,7 @@ fi
 
 echo "Checking file: libssh2-${VERSION}.tar.gz"
 md5=`md5 -q libssh2-${VERSION}.tar.gz`
-if [ $md5 != "42e2b3796ac07fc1dbafc7abcc002cd3" ]
+if [ $md5 != "071004c60c5d6f90354ad1b701013a0b" ]
 then
 	echo "File corrupt, please download again."
 	exit 1

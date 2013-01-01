@@ -46,13 +46,13 @@
    to make the BANNER define (used by src/session.c) be a valid SSH
    banner. Release versions have no appended strings and may of course not
    have dashes either. */
-#define LIBSSH2_VERSION "1.4.2"
+#define LIBSSH2_VERSION "1.4.3"
 
 /* The numeric version number is also available "in parts" by using these
    defines: */
 #define LIBSSH2_VERSION_MAJOR 1
 #define LIBSSH2_VERSION_MINOR 4
-#define LIBSSH2_VERSION_PATCH 2
+#define LIBSSH2_VERSION_PATCH 3
 
 /* This is the numeric version of the libssh2 version number, meant for easier
    parsing and comparions by programs. The LIBSSH2_VERSION_NUM define will
@@ -69,7 +69,7 @@
    and it is always a greater number in a more recent release. It makes
    comparisons with greater than and less than work.
 */
-#define LIBSSH2_VERSION_NUM 0x010402
+#define LIBSSH2_VERSION_NUM 0x010403
 
 /*
  * This is the date and time when the full source package was created. The
@@ -80,7 +80,7 @@
  *
  * "Mon Feb 12 11:35:33 UTC 2007"
  */
-#define LIBSSH2_TIMESTAMP "Fri May 18 21:30:56 UTC 2012"
+#define LIBSSH2_TIMESTAMP "Tue Nov 27 21:45:20 UTC 2012"
 
 #ifndef RC_INVOKED
 
@@ -405,6 +405,7 @@ typedef struct _LIBSSH2_POLLFD {
 #define LIBSSH2_ERROR_SOCKET_RECV               -43
 #define LIBSSH2_ERROR_ENCRYPT                   -44
 #define LIBSSH2_ERROR_BAD_SOCKET                -45
+#define LIBSSH2_ERROR_KNOWN_HOSTS               -46
 
 /* this is a define to provide the old (<= 1.2.7) name */
 #define LIBSSH2_ERROR_BANNER_NONE LIBSSH2_ERROR_BANNER_RECV

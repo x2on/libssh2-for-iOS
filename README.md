@@ -14,6 +14,10 @@ libssh2 with libgcrypt:
 ```bash
 ./build-all.sh libgcrypt
 ```
+## Changelog:
 
-**UPDATE 2012-05-29**: OpenSSL 1.0.1c + libssh 1.4.2
-**UPDATE 2011-02-08**: I habe updated OpemSSL to 1.0.0d
+**2013-01-01**: libssh 1.4.3
+
+**2012-05-29**: OpenSSL 1.0.1c + libssh 1.4.2
+
+**2011-02-08**: OpenSSL 1.0.0d

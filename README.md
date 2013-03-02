@@ -16,6 +16,8 @@ libssh2 with libgcrypt:
 ```
 ## Changelog:
 
+**2013-03-02**: OpenSSL 1.0.1e
+
 **2013-01-01**: libssh 1.4.3
 
 **2012-05-29**: OpenSSL 1.0.1c + libssh 1.4.2

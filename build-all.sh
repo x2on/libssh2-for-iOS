@@ -27,9 +27,9 @@ then
 elif [ "$1" == "libgcrypt" ];
 then
 	echo "Build libgpg-error:"
-	./build-libgpg-error.sh
+	./libgcrypt-for-ios/build-libgpg-error.sh
 	echo "Build libgcrypt:"
-	./build-libgcrypt.sh
+	./libgcrypt-for-ios/build-libgcrypt.sh
 	echo "Build libssh2:"
 	./build-libssh2.sh libgcrypt
 else

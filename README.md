@@ -6,6 +6,12 @@ The example uses libssh2 to make an ssh connection to an ssh server. Then you ca
 
 You can build the libssh2 library with openssl or with libgcrypt!
 
+Checkout the submodules:
+```bash
+git submodule init
+git submodule update
+```
+
 libssh2 with openssl:
 ```bash
 ./build-all.sh openssl
@@ -15,6 +21,8 @@ libssh2 with libgcrypt:
 ./build-all.sh libgcrypt
 ```
 ## Changelog:
+
+**2013-03-03**: Move OpenSSL to submodule
 
 **2013-03-02**: OpenSSL 1.0.1e
 

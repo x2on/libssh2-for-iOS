@@ -29,12 +29,12 @@
 	IBOutlet UITextView *textView;
 }
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet UITextField *textField;
-@property (nonatomic, retain) IBOutlet UITextField *ipField;
-@property (nonatomic, retain) IBOutlet UITextField *userField;
-@property (nonatomic, retain) IBOutlet UITextField *passwordField;
-@property (nonatomic, retain) IBOutlet UITextView *textView;
+@property (nonatomic, strong) IBOutlet UIWindow *window;
+@property (nonatomic, strong) IBOutlet UITextField *textField;
+@property (nonatomic, strong) IBOutlet UITextField *ipField;
+@property (nonatomic, strong) IBOutlet UITextField *userField;
+@property (nonatomic, strong) IBOutlet UITextField *passwordField;
+@property (nonatomic, strong) IBOutlet UITextView *textView;
 
 - (IBAction)showInfo;
 - (IBAction)executeCommand:(id)sender;

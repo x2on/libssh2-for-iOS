@@ -28,12 +28,7 @@
 #include <arpa/inet.h>
 
 
-unsigned long hostaddr;
-int sock;
-struct sockaddr_in soin;
-LIBSSH2_SESSION *session;
-LIBSSH2_CHANNEL *channel;
-int rc;
+
 
 static int waitsocket(int socket_fd, LIBSSH2_SESSION *session)
 {
@@ -43,29 +38,41 @@ static int waitsocket(int socket_fd, LIBSSH2_SESSION *session)
     fd_set *writefd = NULL;
     fd_set *readfd = NULL;
     int dir;
-	
+
     timeout.tv_sec = 10;
     timeout.tv_usec = 0;
-	
+
     FD_ZERO(&fd);
-	
+
     FD_SET(socket_fd, &fd);
-	
+
     /* now make sure we wait in the correct direction */
     dir = libssh2_session_block_directions(session);
-	
+
     if(dir & LIBSSH2_SESSION_BLOCK_INBOUND)
         readfd = &fd;
-	
+
     if(dir & LIBSSH2_SESSION_BLOCK_OUTBOUND)
         writefd = &fd;
-	
+
     rc = select(socket_fd + 1, readfd, writefd, NULL, &timeout);
-	
+
     return rc;
 }
 
-@implementation SSHWrapper
+@implementation SSHWrapper {
+    int sock;
+    LIBSSH2_SESSION *session;
+    LIBSSH2_CHANNEL *channel;
+    int rc;
+}
+
+- (void)dealloc {
+    [self closeConnection];
+    session = nil;
+    channel = nil;
+}
+
 
 - (void)connectToHost:(NSString *)host port:(int)port user:(NSString *)user password:(NSString *)password error:(NSError **)error {
     if (host.length == 0) {
@@ -75,13 +82,14 @@ static int waitsocket(int socket_fd, LIBSSH2_SESSION *session)
 	const char* hostChar = [host cStringUsingEncoding:NSUTF8StringEncoding];
 	const char* userChar = [user cStringUsingEncoding:NSUTF8StringEncoding];
 	const char* passwordChar = [password cStringUsingEncoding:NSUTF8StringEncoding];
+    struct sockaddr_in sock_serv_addr;
+    unsigned long hostaddr = inet_addr(hostChar);
 
-    hostaddr = inet_addr(hostChar);
     sock = socket(AF_INET, SOCK_STREAM, 0);
-    soin.sin_family = AF_INET;
-    soin.sin_port = htons(port);
-    soin.sin_addr.s_addr = hostaddr;
-    if (connect(sock, (struct sockaddr*)(&soin),sizeof(struct sockaddr_in)) != 0) {
+    sock_serv_addr.sin_family = AF_INET;
+    sock_serv_addr.sin_port = htons(port);
+    sock_serv_addr.sin_addr.s_addr = hostaddr;
+    if (connect(sock, (struct sockaddr *) (&sock_serv_addr), sizeof(sock_serv_addr)) != 0) {
         *error = [NSError errorWithDomain:@"de.felixschulze.sshwrapper" code:400 userInfo:@{NSLocalizedDescriptionKey:@"Failed to connect"}];
         return;
     }
@@ -151,7 +159,7 @@ static int waitsocket(int socket_fd, LIBSSH2_SESSION *session)
             rc1 = libssh2_channel_read( channel, buffer, sizeof(buffer) );
             if( rc1 > 0 )
             {
-				result = [NSString stringWithCString:buffer encoding:NSASCIIStringEncoding];
+				result = @(buffer);
             }
         }
         while( rc1 > 0 );

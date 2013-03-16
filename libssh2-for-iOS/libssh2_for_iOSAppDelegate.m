@@ -18,8 +18,10 @@
 //  limitations under the License.
 
 #import "libssh2_for_iOSAppDelegate.h"
-#import "VersionHelper.h"
 #import "SSHWrapper.h"
+#include <openssl/opensslv.h>
+#include "libssh2.h"
+#include "gcrypt.h"
 
 @implementation libssh2_for_iOSAppDelegate
 
@@ -46,13 +48,11 @@
     }
 
     [sshWrapper closeConnection];
-	[sshWrapper release];
 
     if (error) {
         textView.text = nil;
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         [alertView show];
-        [alertView release];
     }
 	
 	[textField resignFirstResponder];
@@ -63,10 +63,9 @@
 
 
 - (IBAction)showInfo {
-    NSString *message = [NSString stringWithFormat:@"libssh2-Version: %@\nlibgcrypt-Version: %@\nlibgpg-error-Version: %@\nopenssl-Version: %@\n\nLicense: See include/*/LICENSE\n\nCopyright 2011-2013 by Felix Schulze\n http://www.felixschulze.de", [VersionHelper libssh2Version], [VersionHelper libgcryptVersion], [VersionHelper libgpgerrorVersion], [VersionHelper opensslVersion]];
+    NSString *message = [NSString stringWithFormat:@"libssh2-Version: %@\nlibgcrypt-Version: %@\nlibgpg-error-Version: %@\nopenssl-Version: %@\n\nLicense: See include/*/LICENSE\n\nCopyright 2011-2013 by Felix Schulze\n http://www.felixschulze.de",  @LIBSSH2_VERSION, @GCRYPT_VERSION, @"1.10", @OPENSSL_VERSION_TEXT];
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"libssh2-for-iOS" message:message delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
 	[alert show];
-	[alert release];
 }
 
 
@@ -118,10 +117,6 @@
 }
 
 
-- (void)dealloc {
-    [window release];
-    [super dealloc];
-}
 
 
 @end

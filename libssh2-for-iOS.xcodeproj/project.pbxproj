@@ -20,7 +20,6 @@
 		2AB446EE12F8A588006B0090 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB446E912F8A588006B0090 /* libssl.a */; };
 		2AB4470112F8A5B5006B0090 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB4470012F8A5B5006B0090 /* libz.dylib */; };
 		53E9E45A16F4D4F300347B0F /* SSHWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E9E45916F4D4F300347B0F /* SSHWrapper.m */; };
-		53E9E45D16F4D50900347B0F /* VersionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E9E45C16F4D50900347B0F /* VersionHelper.m */; };
 		53E9E46016F4D51100347B0F /* libssh2_for_iOSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E9E45F16F4D51100347B0F /* libssh2_for_iOSAppDelegate.m */; };
 /* End PBXBuildFile section */
 
@@ -42,8 +41,6 @@
 		2AB4470612F8A5CC006B0090 /* libssh2_for_iOS_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = libssh2_for_iOS_Prefix.pch; path = "libssh2-for-iOS/libssh2_for_iOS_Prefix.pch"; sourceTree = "<group>"; };
 		53E9E45816F4D4F300347B0F /* SSHWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSHWrapper.h; path = "libssh2-for-iOS/SSHWrapper.h"; sourceTree = SOURCE_ROOT; };
 		53E9E45916F4D4F300347B0F /* SSHWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSHWrapper.m; path = "libssh2-for-iOS/SSHWrapper.m"; sourceTree = SOURCE_ROOT; };
-		53E9E45B16F4D50900347B0F /* VersionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VersionHelper.h; path = "libssh2-for-iOS/VersionHelper.h"; sourceTree = SOURCE_ROOT; };
-		53E9E45C16F4D50900347B0F /* VersionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VersionHelper.m; path = "libssh2-for-iOS/VersionHelper.m"; sourceTree = SOURCE_ROOT; };
 		53E9E45E16F4D51100347B0F /* libssh2_for_iOSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = libssh2_for_iOSAppDelegate.h; path = "libssh2-for-iOS/libssh2_for_iOSAppDelegate.h"; sourceTree = SOURCE_ROOT; };
 		53E9E45F16F4D51100347B0F /* libssh2_for_iOSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = libssh2_for_iOSAppDelegate.m; path = "libssh2-for-iOS/libssh2_for_iOSAppDelegate.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -130,8 +127,6 @@
 				53E9E45F16F4D51100347B0F /* libssh2_for_iOSAppDelegate.m */,
 				53E9E45816F4D4F300347B0F /* SSHWrapper.h */,
 				53E9E45916F4D4F300347B0F /* SSHWrapper.m */,
-				53E9E45B16F4D50900347B0F /* VersionHelper.h */,
-				53E9E45C16F4D50900347B0F /* VersionHelper.m */,
 			);
 			name = "libssh2-for-iOS";
 			sourceTree = "<group>";
@@ -202,7 +197,6 @@
 			files = (
 				2A3B48BC12F897D600F428E7 /* main.m in Sources */,
 				53E9E45A16F4D4F300347B0F /* SSHWrapper.m in Sources */,
-				53E9E45D16F4D50900347B0F /* VersionHelper.m in Sources */,
 				53E9E46016F4D51100347B0F /* libssh2_for_iOSAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -214,6 +208,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -232,6 +227,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "libssh2-for-iOS/libssh2_for_iOS_Prefix.pch";

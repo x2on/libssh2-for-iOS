@@ -68,19 +68,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		080E96DDFE201D6D7F000001 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				53E9E45E16F4D51100347B0F /* libssh2_for_iOSAppDelegate.h */,
-				53E9E45F16F4D51100347B0F /* libssh2_for_iOSAppDelegate.m */,
-				53E9E45816F4D4F300347B0F /* SSHWrapper.h */,
-				53E9E45916F4D4F300347B0F /* SSHWrapper.m */,
-				53E9E45B16F4D50900347B0F /* VersionHelper.h */,
-				53E9E45C16F4D50900347B0F /* VersionHelper.m */,
-			);
-			path = Classes;
-			sourceTree = "<group>";
-		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -92,7 +79,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				080E96DDFE201D6D7F000001 /* Classes */,
+				53E9E46116F4D62500347B0F /* libssh2-for-iOS */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -134,6 +121,19 @@
 				2AB4470012F8A5B5006B0090 /* libz.dylib */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		53E9E46116F4D62500347B0F /* libssh2-for-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				53E9E45E16F4D51100347B0F /* libssh2_for_iOSAppDelegate.h */,
+				53E9E45F16F4D51100347B0F /* libssh2_for_iOSAppDelegate.m */,
+				53E9E45816F4D4F300347B0F /* SSHWrapper.h */,
+				53E9E45916F4D4F300347B0F /* SSHWrapper.m */,
+				53E9E45B16F4D50900347B0F /* VersionHelper.h */,
+				53E9E45C16F4D50900347B0F /* VersionHelper.m */,
+			);
+			name = "libssh2-for-iOS";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

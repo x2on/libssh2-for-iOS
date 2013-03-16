@@ -38,17 +38,27 @@
 
 - (IBAction)executeCommand:(id)sender {
 	SSHWrapper *sshWrapper = [[SSHWrapper alloc] init];
-	[sshWrapper connectToHost:ipField.text port:22 user:userField.text password:passwordField.text];
+    NSError *error = nil;
+	[sshWrapper connectToHost:ipField.text port:22 user:userField.text password:passwordField.text error:&error];
 
-	textView.text = [sshWrapper executeCommand:textField.text];
+    if (!error) {
+        textView.text = [sshWrapper executeCommand:textField.text error:&error];
+    }
+
     [sshWrapper closeConnection];
 	[sshWrapper release];
+
+    if (error) {
+        textView.text = nil;
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+        [alertView show];
+        [alertView release];
+    }
 	
 	[textField resignFirstResponder];
 	[ipField resignFirstResponder];
 	[userField resignFirstResponder];
 	[passwordField resignFirstResponder];
-
 }
 
 

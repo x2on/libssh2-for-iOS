@@ -1,6 +1,8 @@
 /* gcrypt.h -  GNU Cryptographic Library Interface              -*- c -*-
    Copyright (C) 1998, 1999, 2000, 2001, 2002, 2003, 2004, 2006
-                 2007, 2008, 2009, 2010, 2011  Free Software Foundation, Inc.
+                 2007, 2008, 2009, 2010, 2011,
+                 2012  Free Software Foundation, Inc.
+   Copyright (C) 2012, 2013  g10 Code GmbH
 
    This file is part of Libgcrypt.
 
@@ -61,7 +63,12 @@ extern "C" {
    return the same version.  The purpose of this macro is to let
    autoconf (using the AM_PATH_GCRYPT macro) check that this header
    matches the installed library.  */
-#define GCRYPT_VERSION "1.5.0"
+#define GCRYPT_VERSION "1.5.3"
+
+/* The version number of this header.  It may be used to handle minor
+   API incompatibilities.  */
+#define GCRYPT_VERSION_NUMBER 0x010503
+
 
 /* Internal: We can't use the convenience macros for the multi
    precision integer functions when building this library. */
@@ -415,7 +422,8 @@ enum gcry_ctl_cmds
     GCRYCTL_FORCE_FIPS_MODE = 56,
     GCRYCTL_SELFTEST = 57,
     /* Note: 58 .. 62 are used internally.  */
-    GCRYCTL_DISABLE_HWF = 63
+    GCRYCTL_DISABLE_HWF = 63,
+    GCRYCTL_SET_ENFORCED_FIPS_FLAG = 64
   };
 
 /* Perform various operations defined by CMD. */
@@ -941,7 +949,7 @@ gcry_error_t gcry_cipher_setiv (gcry_cipher_hd_t hd,
 gpg_error_t gcry_cipher_setctr (gcry_cipher_hd_t hd,
                                 const void *ctr, size_t ctrlen);
 
-/* Retrieved the key length in bytes used with algorithm A. */
+/* Retrieve the key length in bytes used with algorithm A. */
 size_t gcry_cipher_get_algo_keylen (int algo);
 
 /* Retrieve the block length in bytes used with algorithm A. */
@@ -1249,6 +1257,7 @@ void gcry_md_debug (gcry_md_hd_t hd, const char *suffix);
 gcry_error_t gcry_md_list (int *list, int *list_length);
 
 
+#if !defined(GCRYPT_NO_DEPRECATED) || defined(_GCRYPT_IN_LIBGCRYPT)
 /* Alternative interface for asymmetric cryptography.  This interface
    is deprecated.  */
 
@@ -1400,6 +1409,7 @@ typedef struct gcry_ac_ssa_pkcs_v1_5
 {
   gcry_md_algo_t md;
 } gcry_ac_ssa_pkcs_v1_5_t _GCRY_ATTR_INTERNAL;
+#endif /* !GCRYPT_NO_DEPRECATED || !_GCRYPT_IN_LIBGCRYPT */
 
 
 #ifndef GCRYPT_NO_DEPRECATED

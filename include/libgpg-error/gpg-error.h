@@ -1,20 +1,20 @@
 /* Output of mkheader.awk.  DO NOT EDIT.  -*- buffer-read-only: t -*- */
 
 /* gpg-error.h - Public interface to libgpg-error.
-   Copyright (C) 2003, 2004, 2010 g10 Code GmbH
+   Copyright (C) 2003, 2004, 2010, 2013 g10 Code GmbH
 
    This file is part of libgpg-error.
- 
+
    libgpg-error is free software; you can redistribute it and/or
    modify it under the terms of the GNU Lesser General Public License
    as published by the Free Software Foundation; either version 2.1 of
    the License, or (at your option) any later version.
- 
+
    libgpg-error is distributed in the hope that it will be useful, but
    WITHOUT ANY WARRANTY; without even the implied warranty of
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
    Lesser General Public License for more details.
- 
+
    You should have received a copy of the GNU Lesser General Public
    License along with this program; if not, see <http://www.gnu.org/licenses/>.
  */
@@ -27,12 +27,14 @@
 
 #ifdef __GNUC__
 #define GPG_ERR_INLINE __inline__
+#elif _MSC_VER >= 1300
+#define GPG_ERR_INLINE __inline
 #elif __STDC_VERSION__ >= 199901L
 #define GPG_ERR_INLINE inline
 #else
 #ifndef GPG_ERR_INLINE
 #define GPG_ERR_INLINE
-#endif 
+#endif
 #endif
 
 
@@ -92,6 +94,7 @@ typedef enum
     GPG_ERR_SOURCE_GPA = 12,
     GPG_ERR_SOURCE_KLEO = 13,
     GPG_ERR_SOURCE_G13 = 14,
+    GPG_ERR_SOURCE_ASSUAN = 15,
     GPG_ERR_SOURCE_ANY = 31,
     GPG_ERR_SOURCE_USER_1 = 32,
     GPG_ERR_SOURCE_USER_2 = 33,
@@ -295,6 +298,17 @@ typedef enum
     GPG_ERR_LIMIT_REACHED = 183,
     GPG_ERR_NOT_INITIALIZED = 184,
     GPG_ERR_MISSING_ISSUER_CERT = 185,
+    GPG_ERR_NO_KEYSERVER = 186,
+    GPG_ERR_INV_CURVE = 187,
+    GPG_ERR_UNKNOWN_CURVE = 188,
+    GPG_ERR_DUP_KEY = 189,
+    GPG_ERR_AMBIGUOUS = 190,
+    GPG_ERR_NO_CRYPT_CTX = 191,
+    GPG_ERR_WRONG_CRYPT_CTX = 192,
+    GPG_ERR_BAD_CRYPT_CTX = 193,
+    GPG_ERR_CRYPT_CTX_CONFLICT = 194,
+    GPG_ERR_BROKEN_PUBKEY = 195,
+    GPG_ERR_BROKEN_SECKEY = 196,
     GPG_ERR_FULLY_CANCELED = 198,
     GPG_ERR_UNFINISHED = 199,
     GPG_ERR_BUFFER_TOO_SHORT = 200,
@@ -647,6 +661,15 @@ gpg_err_code_t gpg_err_code_from_syserror (void);
 /* Set the ERRNO variable.  This function is the preferred way to set
    ERRNO due to peculiarities on WindowsCE.  */
 void gpg_err_set_errno (int err);
+
+/* Return or check the version.  */
+const char *gpg_error_check_version (const char *req_version);
+
+/* The version string of this header. */
+#define GPG_ERROR_VERSION "1.12"
+
+/* The version number of this header. */
+#define GPG_ERROR_VERSION_NUMBER 0x010c00
 
 
 /* Self-documenting convenience functions.  */

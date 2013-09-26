@@ -22,7 +22,7 @@
 #  Change values here
 #
 VERSION="1.4.3"
-SDKVERSION="6.1"
+SDKVERSION="7.0"
 #
 ###########################################################################
 #
@@ -69,23 +69,23 @@ do
 	export DEVROOT="${DEVELOPER}/Platforms/${PLATFORM}.platform/Developer"
 	export SDKROOT="${DEVROOT}/SDKs/${PLATFORM}${SDKVERSION}.sdk"
 	export LD=${DEVROOT}/usr/bin/ld
+	export CC=${DEVELOPER}/usr/bin/gcc
+	export CXX=${DEVELOPER}/usr/bin/g++
 	if [ "${ARCH}" == "i386" ];
 	then
-	export CC=${DEVROOT}/usr/bin/gcc
-		export CPP=${DEVROOT}/usr/bin/cpp
-		export CXX=${DEVROOT}/usr/bin/g++
-		export CXXCPP=$DEVROOT/usr/bin/cpp
+		export AR=${DEVELOPER}/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar
+		export AS=${DEVELOPER}/Toolchains/XcodeDefault.xctoolchain/usr/bin/as
+		export NM=${DEVELOPER}/Toolchains/XcodeDefault.xctoolchain/usr/bin/nm
+		export RANLIB=${DEVELOPER}/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib
 	else
-		export CC=${DEVROOT}/usr/bin/gcc
-		export CXX=${DEVROOT}/usr/bin/g++
+		export AR=${DEVROOT}/usr/bin/ar
+		export AS=${DEVROOT}/usr/bin/as
+		export NM=${DEVROOT}/usr/bin/nm
+		export RANLIB=${DEVROOT}/usr/bin/ranlib
 	fi
-	export AR=${DEVROOT}/usr/bin/ar
-	export AS=${DEVROOT}/usr/bin/as
-	export NM=${DEVROOT}/usr/bin/nm
-	export RANLIB=$DEVROOT/usr/bin/ranlib
-	export LDFLAGS="-arch ${ARCH} -pipe -no-cpp-precomp -isysroot ${SDKROOT} -L${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk/lib"
-	export CFLAGS="-arch ${ARCH} -pipe -no-cpp-precomp -isysroot ${SDKROOT} -I${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk/include"
-	export CXXFLAGS="-arch ${ARCH} -pipe -no-cpp-precomp -isysroot ${SDKROOT} -I${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk/include"
+	export LDFLAGS="-arch ${ARCH} -pipe -no-cpp-precomp -isysroot ${SDKROOT} -L${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk/lib -miphoneos-version-min=7.0"
+	export CFLAGS="-arch ${ARCH} -pipe -no-cpp-precomp -isysroot ${SDKROOT} -I${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk/include -miphoneos-version-min=7.0"
+	export CPPFLAGS="-arch ${ARCH} -pipe -no-cpp-precomp -isysroot ${SDKROOT} -I${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk/include -miphoneos-version-min=7.0"
 
 	mkdir -p "${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk"
 
@@ -94,7 +94,7 @@ do
 	
 	if [ "$1" == "openssl" ];
 	then
-		./configure --host=${ARCH}-apple-darwin --prefix="${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk" -with-openssl --with-libssl-prefix=${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk --disable-shared --enable-static  >> "${LOG}" 2>&1
+		./configure --host=${ARCH}-apple-darwin --prefix="${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk" --with-openssl --with-libssl-prefix=${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk --disable-shared --enable-static  >> "${LOG}" 2>&1
 	else
 		./configure --host=${ARCH}-apple-darwin --prefix="${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk" --with-libgcrypt --with-libgcrypt-prefix=${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk --disable-shared --enable-static  >> "${LOG}" 2>&1
 	fi

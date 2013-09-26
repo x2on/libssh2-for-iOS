@@ -1,6 +1,6 @@
 [submodule "openssl"]
 	path = openssl
-	url = git://github.com/x2on/OpenSSL-for-iPhone.git
+	url = https://github.com/x2on/OpenSSL-for-iPhone.git
 [submodule "libgcrypt-for-ios"]
 	path = libgcrypt-for-ios
-	url = git://github.com/x2on/libgcrypt-for-ios.git
+	url = https://github.com/x2on/libgcrypt-for-ios.git

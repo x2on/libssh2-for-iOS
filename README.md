@@ -1,3 +1,5 @@
+# libssh2-for-iOS [![Build Status](https://travis-ci.org/x2on/libssh2-for-iOS.png)](https://travis-ci.org/x2on/libssh2-for-iOS)
+
 This is a tutorial for using self-compiled builds of the libssh2-library for iOS. You can build apps with XCode and the official SDK from Apple with this. I also made a small example-app for using the libraries with XCode and the iPhone/iPhone-Simulator.
 
 @see: http://www.x2on.de/2011/02/02/libssh2-for-ios-iphone-and-ipad-example-app-with-ssh-connection/

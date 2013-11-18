@@ -1,0 +1,7 @@
+language: objective-c
+
+before_install: 
+ - ./build-all.sh libgcrypt
+ - ./build-all.sh openssl
+script: 
+ - xctool -project libssh2-for-iOS.xcodeproj -scheme libssh2-for-iOS -sdk iphonesimulator clean build

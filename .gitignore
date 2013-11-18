@@ -4,3 +4,4 @@ src
 libssh2-for-iOS.xcodeproj/project.xcworkspace/xcuserdata
 libssh2-for-iOS.xcodeproj/xcuserdata
 lib
+*.xccheckout

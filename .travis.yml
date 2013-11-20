@@ -1,7 +1,10 @@
 language: objective-c
 
 before_install: 
- - ./build-all.sh libgcrypt
  - ./build-all.sh openssl
+ - xcrun -sdk iphoneos lipo -info ./lib/*.a
+ - ./build-all.sh libgcrypt
+ - xcrun -sdk iphoneos lipo -info ./lib/*.a
+
 script: 
  - xctool -project libssh2-for-iOS.xcodeproj -scheme libssh2-for-iOS -sdk iphonesimulator clean build

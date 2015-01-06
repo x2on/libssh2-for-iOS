@@ -3,7 +3,7 @@
 //  libssh2-for-iOS
 //
 //  Created by Felix Schulze on 01.02.11.
-//  Copyright 2010 Felix Schulze. All rights reserved.
+//  Copyright 2010-2015 Felix Schulze. All rights reserved.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -19,15 +19,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface libssh2_for_iOSAppDelegate : NSObject <UIApplicationDelegate> {
-    UIWindow *window;
-	
-	IBOutlet UITextField *textField;
-	IBOutlet UITextField *ipField;
-	IBOutlet UITextField *userField;
-	IBOutlet UITextField *passwordField;
-	IBOutlet UITextView *textView;
-}
+@interface libssh2_for_iOSAppDelegate : NSObject <UIApplicationDelegate>
 
 @property (nonatomic, strong) IBOutlet UIWindow *window;
 @property (nonatomic, strong) IBOutlet UITextField *textField;
@@ -38,5 +30,6 @@
 
 - (IBAction)showInfo;
 - (IBAction)executeCommand:(id)sender;
+
 @end
 

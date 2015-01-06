@@ -12,15 +12,13 @@
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		2A3B48BC12F897D600F428E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3B48BB12F897D600F428E7 /* main.m */; };
 		2A3B48BE12F897E000F428E7 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A3B48BD12F897E000F428E7 /* MainWindow.xib */; };
-		2AB446D812F8A424006B0090 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2AB446D712F8A424006B0090 /* Icon.png */; };
-		2AB446EA12F8A588006B0090 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB446E512F8A588006B0090 /* libcrypto.a */; };
-		2AB446EB12F8A588006B0090 /* libgcrypt.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB446E612F8A588006B0090 /* libgcrypt.a */; };
-		2AB446EC12F8A588006B0090 /* libgpg-error.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB446E712F8A588006B0090 /* libgpg-error.a */; };
 		2AB446ED12F8A588006B0090 /* libssh2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB446E812F8A588006B0090 /* libssh2.a */; };
-		2AB446EE12F8A588006B0090 /* libssl.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB446E912F8A588006B0090 /* libssl.a */; };
 		2AB4470112F8A5B5006B0090 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB4470012F8A5B5006B0090 /* libz.dylib */; };
 		53E9E45A16F4D4F300347B0F /* SSHWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E9E45916F4D4F300347B0F /* SSHWrapper.m */; };
 		53E9E46016F4D51100347B0F /* libssh2_for_iOSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E9E45F16F4D51100347B0F /* libssh2_for_iOSAppDelegate.m */; };
+		53F7E9D71A5C2B1700F3C678 /* openssl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F7E9D61A5C2B1700F3C678 /* openssl.framework */; };
+		53F7E9D91A5C2DB900F3C678 /* gcrypt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F7E9D81A5C2DB900F3C678 /* gcrypt.framework */; };
+		53F7E9DB1A5C2EBD00F3C678 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53F7E9DA1A5C2EBD00F3C678 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,12 +28,7 @@
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2A3B48BB12F897D600F428E7 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "libssh2-for-iOS/main.m"; sourceTree = "<group>"; };
 		2A3B48BD12F897E000F428E7 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = "libssh2-for-iOS/MainWindow.xib"; sourceTree = "<group>"; };
-		2AB446D712F8A424006B0090 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = "libssh2-for-iOS/Icon.png"; sourceTree = "<group>"; };
-		2AB446E512F8A588006B0090 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = lib/libcrypto.a; sourceTree = "<group>"; };
-		2AB446E612F8A588006B0090 /* libgcrypt.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libgcrypt.a; path = lib/libgcrypt.a; sourceTree = "<group>"; };
-		2AB446E712F8A588006B0090 /* libgpg-error.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libgpg-error.a"; path = "lib/libgpg-error.a"; sourceTree = "<group>"; };
 		2AB446E812F8A588006B0090 /* libssh2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssh2.a; path = lib/libssh2.a; sourceTree = "<group>"; };
-		2AB446E912F8A588006B0090 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = lib/libssl.a; sourceTree = "<group>"; };
 		2AB446F312F8A5A3006B0090 /* libssh2_for_iOS-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "libssh2_for_iOS-Info.plist"; path = "libssh2-for-iOS/libssh2_for_iOS-Info.plist"; sourceTree = "<group>"; };
 		2AB4470012F8A5B5006B0090 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		2AB4470612F8A5CC006B0090 /* libssh2_for_iOS_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = libssh2_for_iOS_Prefix.pch; path = "libssh2-for-iOS/libssh2_for_iOS_Prefix.pch"; sourceTree = "<group>"; };
@@ -43,6 +36,9 @@
 		53E9E45916F4D4F300347B0F /* SSHWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSHWrapper.m; path = "libssh2-for-iOS/SSHWrapper.m"; sourceTree = SOURCE_ROOT; };
 		53E9E45E16F4D51100347B0F /* libssh2_for_iOSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = libssh2_for_iOSAppDelegate.h; path = "libssh2-for-iOS/libssh2_for_iOSAppDelegate.h"; sourceTree = SOURCE_ROOT; };
 		53E9E45F16F4D51100347B0F /* libssh2_for_iOSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = libssh2_for_iOSAppDelegate.m; path = "libssh2-for-iOS/libssh2_for_iOSAppDelegate.m"; sourceTree = SOURCE_ROOT; };
+		53F7E9D61A5C2B1700F3C678 /* openssl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = openssl.framework; sourceTree = "<group>"; };
+		53F7E9D81A5C2DB900F3C678 /* gcrypt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = gcrypt.framework; sourceTree = "<group>"; };
+		53F7E9DA1A5C2EBD00F3C678 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "libssh2-for-iOS/Images.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,11 +49,9 @@
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
-				2AB446EA12F8A588006B0090 /* libcrypto.a in Frameworks */,
-				2AB446EB12F8A588006B0090 /* libgcrypt.a in Frameworks */,
-				2AB446EC12F8A588006B0090 /* libgpg-error.a in Frameworks */,
+				53F7E9D71A5C2B1700F3C678 /* openssl.framework in Frameworks */,
 				2AB446ED12F8A588006B0090 /* libssh2.a in Frameworks */,
-				2AB446EE12F8A588006B0090 /* libssl.a in Frameworks */,
+				53F7E9D91A5C2DB900F3C678 /* gcrypt.framework in Frameworks */,
 				2AB4470112F8A5B5006B0090 /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,8 +91,8 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				53F7E9DA1A5C2EBD00F3C678 /* Images.xcassets */,
 				2AB446F312F8A5A3006B0090 /* libssh2_for_iOS-Info.plist */,
-				2AB446D712F8A424006B0090 /* Icon.png */,
 				2A3B48BD12F897E000F428E7 /* MainWindow.xib */,
 			);
 			name = Resources;
@@ -107,11 +101,9 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2AB446E512F8A588006B0090 /* libcrypto.a */,
-				2AB446E612F8A588006B0090 /* libgcrypt.a */,
-				2AB446E712F8A588006B0090 /* libgpg-error.a */,
 				2AB446E812F8A588006B0090 /* libssh2.a */,
-				2AB446E912F8A588006B0090 /* libssl.a */,
+				53F7E9D81A5C2DB900F3C678 /* gcrypt.framework */,
+				53F7E9D61A5C2B1700F3C678 /* openssl.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
@@ -157,7 +149,7 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0610;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "libssh2-for-iOS" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -183,8 +175,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53F7E9DB1A5C2EBD00F3C678 /* Images.xcassets in Resources */,
 				2A3B48BE12F897E000F428E7 /* MainWindow.xib in Resources */,
-				2AB446D812F8A424006B0090 /* Icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,8 +200,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -227,8 +225,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "libssh2-for-iOS/libssh2_for_iOS_Prefix.pch";
 				INFOPLIST_FILE = "libssh2-for-iOS/libssh2_for_iOS-Info.plist";
@@ -244,12 +248,12 @@
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "include/**";
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -257,7 +261,6 @@
 		C01FCF5008A954540054247B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;

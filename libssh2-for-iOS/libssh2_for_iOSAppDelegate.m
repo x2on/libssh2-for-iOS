@@ -3,7 +3,7 @@
 //  libssh2-for-iOS
 //
 //  Created by Felix Schulze on 01.02.11.
-//  Copyright 2010 Felix Schulze. All rights reserved.
+//  Copyright 2010-2015 Felix Schulze. All rights reserved.
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -25,9 +25,6 @@
 
 @implementation libssh2_for_iOSAppDelegate
 
-@synthesize window;
-@synthesize textField, textView, ipField, userField, passwordField;
-
 #pragma mark -
 #pragma mark Application lifecycle
 
@@ -41,24 +38,24 @@
 - (IBAction)executeCommand:(id)sender {
 	SSHWrapper *sshWrapper = [[SSHWrapper alloc] init];
     NSError *error = nil;
-	[sshWrapper connectToHost:ipField.text port:22 user:userField.text password:passwordField.text error:&error];
+	[sshWrapper connectToHost:_ipField.text port:22 user:_userField.text password:_passwordField.text error:&error];
 
     if (!error) {
-        textView.text = [sshWrapper executeCommand:textField.text error:&error];
+        _textView.text = [sshWrapper executeCommand:_textField.text error:&error];
     }
 
     [sshWrapper closeConnection];
 
     if (error) {
-        textView.text = nil;
+        _textView.text = nil;
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
         [alertView show];
     }
 	
-	[textField resignFirstResponder];
-	[ipField resignFirstResponder];
-	[userField resignFirstResponder];
-	[passwordField resignFirstResponder];
+	[_textField resignFirstResponder];
+	[_ipField resignFirstResponder];
+	[_userField resignFirstResponder];
+	[_passwordField resignFirstResponder];
 }
 
 
@@ -115,8 +112,6 @@
      Free up as much memory as possible by purging cached data objects that can be recreated (or reloaded from disk) later.
      */
 }
-
-
 
 
 @end

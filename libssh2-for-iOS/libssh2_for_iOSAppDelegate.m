@@ -63,7 +63,7 @@
 
 
 - (IBAction)showInfo {
-    NSString *message = [NSString stringWithFormat:@"libssh2-Version: %@\nlibgcrypt-Version: %@\nlibgpg-error-Version: %@\nopenssl-Version: %@\n\nLicense: See include/*/LICENSE\n\nCopyright 2011-2013 by Felix Schulze\n http://www.felixschulze.de",  @LIBSSH2_VERSION, @GCRYPT_VERSION, @"1.10", @OPENSSL_VERSION_TEXT];
+    NSString *message = [NSString stringWithFormat:@"libssh2-Version: %@\nlibgcrypt-Version: %@\nlibgpg-error-Version: %@\nopenssl-Version: %@\n\nLicense: See include/*/LICENSE\n\nCopyright 2011-2015 by Felix Schulze\n http://www.felixschulze.de",  @LIBSSH2_VERSION, @GCRYPT_VERSION, @"1.12", @OPENSSL_VERSION_TEXT];
 	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"libssh2-for-iOS" message:message delegate:nil cancelButtonTitle:@"Close" otherButtonTitles:nil];
 	[alert show];
 }

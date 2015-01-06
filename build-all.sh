@@ -22,6 +22,7 @@ if [ "$1" == "openssl" ];
 then
 	echo "Building openssl:"
 	./openssl/build-libssl.sh $2
+	./openssl/create-openssl-framework.sh
 	echo "Build libssh2:"
 	./build-libssh2.sh openssl
 elif [ "$1" == "libgcrypt" ];

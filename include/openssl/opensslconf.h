@@ -1,6 +1,9 @@
 /* opensslconf.h */
 /* WARNING: Generated automatically from opensslconf.h.in by Configure. */
 
+#ifdef  __cplusplus
+extern "C" {
+#endif
 /* OpenSSL was configured with the following options: */
 #ifndef OPENSSL_SYSNAME_iOS
 # define OPENSSL_SYSNAME_iOS
@@ -34,6 +37,9 @@
 #endif
 #ifndef OPENSSL_NO_STORE
 # define OPENSSL_NO_STORE
+#endif
+#ifndef OPENSSL_NO_UNIT_TEST
+# define OPENSSL_NO_UNIT_TEST
 #endif
 
 #endif /* OPENSSL_DOING_MAKEDEPEND */
@@ -77,6 +83,9 @@
 # if defined(OPENSSL_NO_STORE) && !defined(NO_STORE)
 #  define NO_STORE
 # endif
+# if defined(OPENSSL_NO_UNIT_TEST) && !defined(NO_UNIT_TEST)
+#  define NO_UNIT_TEST
+# endif
 #endif
 
 /* crypto/opensslconf.h.in */
@@ -86,8 +95,8 @@
 
 #if !(defined(VMS) || defined(__VMS)) /* VMS uses logical names instead */
 #if defined(HEADER_CRYPTLIB_H) && !defined(OPENSSLDIR)
-#define ENGINESDIR "/Users/felixschulze/dev/ios/libs/libssh2-for-iOS/bin/iPhoneSimulator5.1-i386.sdk/lib/engines"
-#define OPENSSLDIR "/Users/felixschulze/dev/ios/libs/libssh2-for-iOS/bin/iPhoneSimulator5.1-i386.sdk"
+#define ENGINESDIR "/Users/felixschulze/Development/Libs/libssh2-for-iOS/bin/iPhoneSimulator8.1-i386.sdk/lib/engines"
+#define OPENSSLDIR "/Users/felixschulze/Development/Libs/libssh2-for-iOS/bin/iPhoneSimulator8.1-i386.sdk"
 #endif
 #endif
 
@@ -233,3 +242,6 @@ YOU SHOULD NOT HAVE BOTH DES_RISC1 AND DES_RISC2 DEFINED!!!!!
 
 #endif /* DES_DEFAULT_OPTIONS */
 #endif /* HEADER_DES_LOCL_H */
+#ifdef  __cplusplus
+}
+#endif

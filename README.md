@@ -31,6 +31,8 @@ git submodule update
 Check the log files in the ```bin``` folder
 ## Changelog:
 
+**2015-01-11**: OpenSSL 1.0.1k
+
 **2015-01-06**: Support for Xcode 6 and iOS 8.1, OpenSSL 1.0.1j
 
 **2014-03-25**: Support for Xcode 5.1 and iOS 7.1

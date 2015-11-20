@@ -11,15 +11,15 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
 		2AB446ED12F8A588006B0090 /* libssh2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB446E812F8A588006B0090 /* libssh2.a */; };
-		2AB4470112F8A5B5006B0090 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB4470012F8A5B5006B0090 /* libz.dylib */; };
 		53E9E45A16F4D4F300347B0F /* SSHWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E9E45916F4D4F300347B0F /* SSHWrapper.m */; };
 		53F7E9D71A5C2B1700F3C678 /* openssl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F7E9D61A5C2B1700F3C678 /* openssl.framework */; };
 		53F7E9D91A5C2DB900F3C678 /* gcrypt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F7E9D81A5C2DB900F3C678 /* gcrypt.framework */; };
 		53F7E9DB1A5C2EBD00F3C678 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53F7E9DA1A5C2EBD00F3C678 /* Images.xcassets */; };
 		FD6F01141BFF42D300B6EFFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F01131BFF42D300B6EFFB /* ViewController.swift */; };
-		FD6F01161BFF433900B6EFFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F01151BFF433900B6EFFB /* AppDelegate.swift */; };
 		FD6F01181BFF43BC00B6EFFB /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD6F01171BFF43BC00B6EFFB /* ViewController.xib */; };
 		FD6F011A1BFF564400B6EFFB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD6F01191BFF564400B6EFFB /* Launch Screen.storyboard */; };
+		FD6F011C1BFF58DB00B6EFFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F011B1BFF58DB00B6EFFB /* AppDelegate.swift */; };
+		FD6F011E1BFF593700B6EFFB /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = FD6F011D1BFF593700B6EFFB /* libz.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,18 +29,18 @@
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		2AB446E812F8A588006B0090 /* libssh2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssh2.a; path = lib/libssh2.a; sourceTree = "<group>"; };
 		2AB446F312F8A5A3006B0090 /* libssh2_for_iOS-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "libssh2_for_iOS-Info.plist"; path = "libssh2-for-iOS/libssh2_for_iOS-Info.plist"; sourceTree = "<group>"; };
-		2AB4470012F8A5B5006B0090 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		2AB4470612F8A5CC006B0090 /* libssh2_for_iOS_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = libssh2_for_iOS_Prefix.pch; path = "libssh2-for-iOS/libssh2_for_iOS_Prefix.pch"; sourceTree = "<group>"; };
 		53E9E45816F4D4F300347B0F /* SSHWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSHWrapper.h; path = "libssh2-for-iOS/SSHWrapper.h"; sourceTree = SOURCE_ROOT; };
 		53E9E45916F4D4F300347B0F /* SSHWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSHWrapper.m; path = "libssh2-for-iOS/SSHWrapper.m"; sourceTree = SOURCE_ROOT; };
 		53F7E9D61A5C2B1700F3C678 /* openssl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = openssl.framework; sourceTree = "<group>"; };
 		53F7E9D81A5C2DB900F3C678 /* gcrypt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = gcrypt.framework; sourceTree = "<group>"; };
 		53F7E9DA1A5C2EBD00F3C678 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "libssh2-for-iOS/Images.xcassets"; sourceTree = "<group>"; };
-		FD6F01121BFF42D300B6EFFB /* libssh2-for-iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libssh2-for-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		FD6F01121BFF42D300B6EFFB /* libssh2-for-iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "libssh2-for-iOS-Bridging-Header.h"; path = "libssh2-for-iOS/libssh2-for-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
 		FD6F01131BFF42D300B6EFFB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "libssh2-for-iOS/ViewController.swift"; sourceTree = "<group>"; };
-		FD6F01151BFF433900B6EFFB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "openssl/OpenSSL-for-iOS/AppDelegate.swift"; sourceTree = "<group>"; };
-		FD6F01171BFF43BC00B6EFFB /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
-		FD6F01191BFF564400B6EFFB /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		FD6F01171BFF43BC00B6EFFB /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = ViewController.xib; path = "libssh2-for-iOS/ViewController.xib"; sourceTree = "<group>"; };
+		FD6F01191BFF564400B6EFFB /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "Launch Screen.storyboard"; path = "libssh2-for-iOS/Launch Screen.storyboard"; sourceTree = "<group>"; };
+		FD6F011B1BFF58DB00B6EFFB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "libssh2-for-iOS/AppDelegate.swift"; sourceTree = "<group>"; };
+		FD6F011D1BFF593700B6EFFB /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,13 +48,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD6F011E1BFF593700B6EFFB /* libz.tbd in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */,
 				53F7E9D71A5C2B1700F3C678 /* openssl.framework in Frameworks */,
 				2AB446ED12F8A588006B0090 /* libssh2.a in Frameworks */,
 				53F7E9D91A5C2DB900F3C678 /* gcrypt.framework in Frameworks */,
-				2AB4470112F8A5B5006B0090 /* libz.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,13 +103,13 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FD6F011D1BFF593700B6EFFB /* libz.tbd */,
 				2AB446E812F8A588006B0090 /* libssh2.a */,
 				53F7E9D81A5C2DB900F3C678 /* gcrypt.framework */,
 				53F7E9D61A5C2B1700F3C678 /* openssl.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
-				2AB4470012F8A5B5006B0090 /* libz.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -117,7 +117,7 @@
 		53E9E46116F4D62500347B0F /* libssh2-for-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				FD6F01151BFF433900B6EFFB /* AppDelegate.swift */,
+				FD6F011B1BFF58DB00B6EFFB /* AppDelegate.swift */,
 				FD6F01131BFF42D300B6EFFB /* ViewController.swift */,
 				FD6F01171BFF43BC00B6EFFB /* ViewController.xib */,
 				53E9E45816F4D4F300347B0F /* SSHWrapper.h */,
@@ -192,9 +192,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD6F011C1BFF58DB00B6EFFB /* AppDelegate.swift in Sources */,
 				53E9E45A16F4D4F300347B0F /* SSHWrapper.m in Sources */,
 				FD6F01141BFF42D300B6EFFB /* ViewController.swift in Sources */,
-				FD6F01161BFF433900B6EFFB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,7 +225,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.x2on.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "libssh2-for-iOS";
-				SWIFT_OBJC_BRIDGING_HEADER = "libssh2-for-iOS-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "libssh2-for-iOS/libssh2-for-iOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -252,7 +252,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "de.x2on.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "libssh2-for-iOS";
-				SWIFT_OBJC_BRIDGING_HEADER = "libssh2-for-iOS-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "libssh2-for-iOS/libssh2-for-iOS-Bridging-Header.h";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

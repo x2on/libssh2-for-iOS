@@ -71,18 +71,10 @@ do
 	export LD=${DEVROOT}/usr/bin/ld
 	export CC=${DEVELOPER}/usr/bin/gcc
 	export CXX=${DEVELOPER}/usr/bin/g++
-	if [[ "${ARCH}" == "i386" || "${ARCH}" == "x86_64" ]];
-	then
-		export AR=${DEVELOPER}/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar
-		export AS=${DEVELOPER}/Toolchains/XcodeDefault.xctoolchain/usr/bin/as
-		export NM=${DEVELOPER}/Toolchains/XcodeDefault.xctoolchain/usr/bin/nm
-		export RANLIB=${DEVELOPER}/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib
-	else
-		export AR=${DEVROOT}/usr/bin/ar
-		export AS=${DEVROOT}/usr/bin/as
-		export NM=${DEVROOT}/usr/bin/nm
-		export RANLIB=${DEVROOT}/usr/bin/ranlib
-	fi
+	export AR=${DEVELOPER}/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar
+	export AS=${DEVELOPER}/Toolchains/XcodeDefault.xctoolchain/usr/bin/as
+	export NM=${DEVELOPER}/Toolchains/XcodeDefault.xctoolchain/usr/bin/nm
+	export RANLIB=${DEVELOPER}/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib
 	export LDFLAGS="-arch ${ARCH} -pipe -no-cpp-precomp -isysroot ${SDKROOT} -L${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk/lib -miphoneos-version-min=7.0"
 	export CFLAGS="-arch ${ARCH} -pipe -no-cpp-precomp -isysroot ${SDKROOT} -I${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk/include -miphoneos-version-min=7.0"
 	export CPPFLAGS="-arch ${ARCH} -pipe -no-cpp-precomp -isysroot ${SDKROOT} -I${CURRENTPATH}/bin/${PLATFORM}${SDKVERSION}-${ARCH}.sdk/include -miphoneos-version-min=7.0"

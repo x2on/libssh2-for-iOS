@@ -10,15 +10,16 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765FD0DF74451002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765FC0DF74451002DB57D /* CoreGraphics.framework */; };
-		2A3B48BC12F897D600F428E7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2A3B48BB12F897D600F428E7 /* main.m */; };
-		2A3B48BE12F897E000F428E7 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2A3B48BD12F897E000F428E7 /* MainWindow.xib */; };
 		2AB446ED12F8A588006B0090 /* libssh2.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB446E812F8A588006B0090 /* libssh2.a */; };
 		2AB4470112F8A5B5006B0090 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 2AB4470012F8A5B5006B0090 /* libz.dylib */; };
 		53E9E45A16F4D4F300347B0F /* SSHWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E9E45916F4D4F300347B0F /* SSHWrapper.m */; };
-		53E9E46016F4D51100347B0F /* libssh2_for_iOSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E9E45F16F4D51100347B0F /* libssh2_for_iOSAppDelegate.m */; };
 		53F7E9D71A5C2B1700F3C678 /* openssl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F7E9D61A5C2B1700F3C678 /* openssl.framework */; };
 		53F7E9D91A5C2DB900F3C678 /* gcrypt.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53F7E9D81A5C2DB900F3C678 /* gcrypt.framework */; };
 		53F7E9DB1A5C2EBD00F3C678 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53F7E9DA1A5C2EBD00F3C678 /* Images.xcassets */; };
+		FD6F01141BFF42D300B6EFFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F01131BFF42D300B6EFFB /* ViewController.swift */; };
+		FD6F01161BFF433900B6EFFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6F01151BFF433900B6EFFB /* AppDelegate.swift */; };
+		FD6F01181BFF43BC00B6EFFB /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD6F01171BFF43BC00B6EFFB /* ViewController.xib */; };
+		FD6F011A1BFF564400B6EFFB /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FD6F01191BFF564400B6EFFB /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,19 +27,20 @@
 		1D6058910D05DD3D006BFB54 /* libssh2-for-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "libssh2-for-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765FC0DF74451002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		2A3B48BB12F897D600F428E7 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "libssh2-for-iOS/main.m"; sourceTree = "<group>"; };
-		2A3B48BD12F897E000F428E7 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = "libssh2-for-iOS/MainWindow.xib"; sourceTree = "<group>"; };
 		2AB446E812F8A588006B0090 /* libssh2.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssh2.a; path = lib/libssh2.a; sourceTree = "<group>"; };
 		2AB446F312F8A5A3006B0090 /* libssh2_for_iOS-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "libssh2_for_iOS-Info.plist"; path = "libssh2-for-iOS/libssh2_for_iOS-Info.plist"; sourceTree = "<group>"; };
 		2AB4470012F8A5B5006B0090 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		2AB4470612F8A5CC006B0090 /* libssh2_for_iOS_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = libssh2_for_iOS_Prefix.pch; path = "libssh2-for-iOS/libssh2_for_iOS_Prefix.pch"; sourceTree = "<group>"; };
 		53E9E45816F4D4F300347B0F /* SSHWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SSHWrapper.h; path = "libssh2-for-iOS/SSHWrapper.h"; sourceTree = SOURCE_ROOT; };
 		53E9E45916F4D4F300347B0F /* SSHWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SSHWrapper.m; path = "libssh2-for-iOS/SSHWrapper.m"; sourceTree = SOURCE_ROOT; };
-		53E9E45E16F4D51100347B0F /* libssh2_for_iOSAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = libssh2_for_iOSAppDelegate.h; path = "libssh2-for-iOS/libssh2_for_iOSAppDelegate.h"; sourceTree = SOURCE_ROOT; };
-		53E9E45F16F4D51100347B0F /* libssh2_for_iOSAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = libssh2_for_iOSAppDelegate.m; path = "libssh2-for-iOS/libssh2_for_iOSAppDelegate.m"; sourceTree = SOURCE_ROOT; };
 		53F7E9D61A5C2B1700F3C678 /* openssl.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = openssl.framework; sourceTree = "<group>"; };
 		53F7E9D81A5C2DB900F3C678 /* gcrypt.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = gcrypt.framework; sourceTree = "<group>"; };
 		53F7E9DA1A5C2EBD00F3C678 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "libssh2-for-iOS/Images.xcassets"; sourceTree = "<group>"; };
+		FD6F01121BFF42D300B6EFFB /* libssh2-for-iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "libssh2-for-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		FD6F01131BFF42D300B6EFFB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "libssh2-for-iOS/ViewController.swift"; sourceTree = "<group>"; };
+		FD6F01151BFF433900B6EFFB /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "openssl/OpenSSL-for-iOS/AppDelegate.swift"; sourceTree = "<group>"; };
+		FD6F01171BFF43BC00B6EFFB /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
+		FD6F01191BFF564400B6EFFB /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +84,7 @@
 		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
 			isa = PBXGroup;
 			children = (
-				2A3B48BB12F897D600F428E7 /* main.m */,
+				FD6F01121BFF42D300B6EFFB /* libssh2-for-iOS-Bridging-Header.h */,
 				2AB4470612F8A5CC006B0090 /* libssh2_for_iOS_Prefix.pch */,
 			);
 			name = "Other Sources";
@@ -93,7 +95,7 @@
 			children = (
 				53F7E9DA1A5C2EBD00F3C678 /* Images.xcassets */,
 				2AB446F312F8A5A3006B0090 /* libssh2_for_iOS-Info.plist */,
-				2A3B48BD12F897E000F428E7 /* MainWindow.xib */,
+				FD6F01191BFF564400B6EFFB /* Launch Screen.storyboard */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -115,8 +117,9 @@
 		53E9E46116F4D62500347B0F /* libssh2-for-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				53E9E45E16F4D51100347B0F /* libssh2_for_iOSAppDelegate.h */,
-				53E9E45F16F4D51100347B0F /* libssh2_for_iOSAppDelegate.m */,
+				FD6F01151BFF433900B6EFFB /* AppDelegate.swift */,
+				FD6F01131BFF42D300B6EFFB /* ViewController.swift */,
+				FD6F01171BFF43BC00B6EFFB /* ViewController.xib */,
 				53E9E45816F4D4F300347B0F /* SSHWrapper.h */,
 				53E9E45916F4D4F300347B0F /* SSHWrapper.m */,
 			);
@@ -149,7 +152,8 @@
 		29B97313FDCFA39411CA2CEA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
 			};
 			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "libssh2-for-iOS" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -175,8 +179,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD6F011A1BFF564400B6EFFB /* Launch Screen.storyboard in Resources */,
 				53F7E9DB1A5C2EBD00F3C678 /* Images.xcassets in Resources */,
-				2A3B48BE12F897E000F428E7 /* MainWindow.xib in Resources */,
+				FD6F01181BFF43BC00B6EFFB /* ViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,9 +192,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A3B48BC12F897D600F428E7 /* main.m in Sources */,
 				53E9E45A16F4D4F300347B0F /* SSHWrapper.m in Sources */,
-				53E9E46016F4D51100347B0F /* libssh2_for_iOSAppDelegate.m in Sources */,
+				FD6F01141BFF42D300B6EFFB /* ViewController.swift in Sources */,
+				FD6F01161BFF433900B6EFFB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,7 +206,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -213,11 +218,15 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "libssh2-for-iOS/libssh2_for_iOS_Prefix.pch";
 				INFOPLIST_FILE = "libssh2-for-iOS/libssh2_for_iOS-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/lib\"",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.x2on.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "libssh2-for-iOS";
+				SWIFT_OBJC_BRIDGING_HEADER = "libssh2-for-iOS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -226,7 +235,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -236,11 +245,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "libssh2-for-iOS/libssh2_for_iOS_Prefix.pch";
 				INFOPLIST_FILE = "libssh2-for-iOS/libssh2_for_iOS-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/lib\"",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = "de.x2on.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "libssh2-for-iOS";
+				SWIFT_OBJC_BRIDGING_HEADER = "libssh2-for-iOS-Bridging-Header.h";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -249,6 +261,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;

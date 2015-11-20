@@ -9,8 +9,7 @@ The example uses libssh2 to make an ssh connection to an ssh server. Then you ca
 You can build the libssh2 library with openssl or with libgcrypt!
 
 ## Requirements:
-- Xcode 6.x
-- iOS 8.1 SDK
+- Xcode 7.1
 - Xcode Command Line Tools
 
 ## Readme
@@ -31,20 +30,13 @@ git submodule update
 Check the log files in the ```bin``` folder
 ## Changelog:
 
-**2015-01-11**: OpenSSL 1.0.1k
-
-**2015-01-06**: Support for Xcode 6 and iOS 8.1, OpenSSL 1.0.1j
-
-**2014-03-25**: Support for Xcode 5.1 and iOS 7.1
-
-**2013-09-26**: Support for Xcode 5 and iOS 7
-
-**2013-03-03**: Move OpenSSL to submodule
-
-**2013-03-02**: OpenSSL 1.0.1e
-
-**2013-01-01**: libssh 1.4.3
-
-**2012-05-29**: OpenSSL 1.0.1c + libssh 1.4.2
-
-**2011-02-08**: OpenSSL 1.0.0d
+* 2015-01-11: Support for Xcode 7 and iOS 9.1, OpenSSL 1.0.2d
+* 2015-01-11: OpenSSL 1.0.1k
+* 2015-01-06: Support for Xcode 6 and iOS 8.1, OpenSSL 1.0.1j
+* 2014-03-25: Support for Xcode 5.1 and iOS 7.1
+* 2013-09-26: Support for Xcode 5 and iOS 7
+* 2013-03-03: Move OpenSSL to submodule
+* 2013-03-02: OpenSSL 1.0.1e
+* 2013-01-01: libssh 1.4.3
+* 2012-05-29: OpenSSL 1.0.1c + libssh 1.4.2
+* 2011-02-08: OpenSSL 1.0.0d

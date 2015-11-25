@@ -22,7 +22,6 @@
 #import "SSHWrapper.h"
 
 #include "libssh2.h"
-#include "libssh2_config.h"
 #include "libssh2_sftp.h"
 #include <sys/socket.h>
 #include <arpa/inet.h>

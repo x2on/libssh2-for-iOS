@@ -34,7 +34,7 @@ DEVELOPER=`xcode-select -print-path`
 set -e
 if [ ! -e libssh2-${VERSION}.tar.gz ]; then
 	echo "Downloading libssh2-${VERSION}.tar.gz"
-    curl -O http://www.libssh2.org/download/libssh2-${VERSION}.tar.gz
+    curl -O https://www.libssh2.org/download/libssh2-${VERSION}.tar.gz
 else
 	echo "Using libssh2-${VERSION}.tar.gz"
 fi
